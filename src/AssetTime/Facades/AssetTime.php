@@ -1,4 +1,4 @@
-<?php namespace Cupparis\AssetTime\Facades;
+<?php namespace Gecche\Cupparis\AssetTime\Facades;
 
 use Illuminate\Support\Facades\Facade as Facade;
 
