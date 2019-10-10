@@ -17,15 +17,18 @@ class AssetTimeManager {
 
     public function suffix($filename,$includeQuestionPoint = true,$public_path = true) {
 
-        if ($public_path) {
-            $filename = public_path() . $filename;
-        }
-
         if ($this->timestamp) {
             return $this->envSuffix($includeQuestionPoint);
         }
 
-        $suffix = $this->files->lastModified($filename);
+        if ($public_path) {
+            $filename = public_path() . $filename;
+        }
+
+        $suffix = '';
+        if ($this->files->exists($filename)) {
+            $suffix = $this->files->lastModified($filename);
+        }
 
         return $includeQuestionPoint ? '?'.$suffix : $suffix;
     }
