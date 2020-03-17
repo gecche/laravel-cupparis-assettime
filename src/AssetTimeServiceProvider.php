@@ -31,7 +31,7 @@ class AssetTimeServiceProvider extends ServiceProvider {
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '/../../config/cupparis-assettime.php' => config_path('cupparis-assettime.php'),
+            __DIR__ . '/../config/cupparis-assettime.php' => config_path('cupparis-assettime.php'),
         ], 'public');
     }
 
